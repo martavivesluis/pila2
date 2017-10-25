@@ -4,21 +4,22 @@ import junit.framework.Assert;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-
+import org.apache.log4j.Logger;
 public class CuaTest {
+
+    final static Logger logger= Logger.getLogger(CuaTest.class);
     private Cua<String> micua;
 
     @Before
     public void before() {
         micua = new CuaImpl<String>(10);
         micua.push("Marta");//afegim primer element
-
-        System.out.println("test iniciat");
-    }
+        logger.info("test iniciat");
+        }
 
     @After
     public void after() {
-        System.out.println("test completat");
+        logger.info("test completat");
     }
 
     @Test
